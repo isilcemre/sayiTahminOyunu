@@ -1,0 +1,155 @@
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+  
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px auto; /* Üst boşluk + otomatik yatay ortala */
+    background-color: #000;
+  
+    display: flex; /* Flex container yaptım */
+    flex-direction: column; /* Dikey hizalama */
+    align-items: center; /* Yatayda ortala */
+    position: relative;
+  }
+
+  .content {
+    background-color: rgba(49, 70, 80, 0.6);
+    border: 5px solid rgb(12, 19, 46);
+    border-radius: 20px;
+    display:flexbox;
+    align-items: center;
+    padding: 20px; /* İçerikle kenar arası boşluk */
+    width: 90%; /* Genişlik ayarı */
+    max-width: 700px; /* Maksimum genişlik (responsive) */
+    margin: 20px auto; /* Ortalama */
+    position: relative;
+    z-index: 1;
+  }
+
+  #p1 {
+    color: antiquewhite;
+    font-family: monospace;
+    font-size: 16px;
+  }
+
+  #hint {
+    color: antiquewhite;
+    font-family: monospace;
+    font-size: 16px;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  #matrixCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1; /* arka planda kalır */
+    width: 100%;
+    height: 100%;
+  }
+
+  #clock {
+    margin-left: 65px;
+    margin-right: 10px;
+    color: #eee7e7;
+    background-color: rgb(117, 115, 115);
+    border: solid rgb(51, 51, 51);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    width: 50px;
+    height: 26px;
+
+    line-height: 26px; /* Metni dikeyde ortalar */
+    text-align:center;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(226, 218, 217, 0.6),
+                0 -10px 30px rgba(226, 218, 217, 0.6);
+  }
+
+
+  h1 {
+    color: #7ebaf2;
+    text-shadow: 2px 2px 4px #2493fb;
+    font-family: monospace;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto; /* Ortalamak için */
+    text-align: center; /* Metni ortalamak için */
+    position: relative; /* Göreceli konumlandırma */
+    border-right: 2px solid #0F0; /* Yanıp sönen imleç */
+    width: 0; /* Başlangıçta görünmesin */
+    animation: 
+        typing 3s steps(30, end) forwards,
+        blink-caret .75s step-end infinite 3s; /* 3s sonra başlasın */
+  }
+
+  @keyframes typing {
+      from { width: 0 }
+      to { width: 20ch } /* Kaç karakterlik yazı gösterilecek */
+  }
+
+  @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: rgb(0, 145, 255); }
+  }
+
+  #game, h1, body * {
+    position: relative;
+    z-index: 1;
+  }
+  
+  input, button {
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px;
+    font-family: monospace;
+  }
+
+  #difficulty button{
+    padding: 6px 8px; /*dikey yatay*/
+    font-size: 10px;
+    margin: 10px;
+    font-family: monospace;
+    margin-right: 35px;
+  }
+
+  #numberGrid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr); /* 10 sütun */
+    gap: 5px;
+    max-width: 320px;
+    margin: 30px auto;
+    justify-content: center; /*zorluk seviyesi değişse de cell lerin hepsi oratada bulunacak*/
+  }
+  
+  .number-cell {
+    width: 30px;
+    height: 30px;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: monospace;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: 0.3s;
+  }
+  
+  .guessed_wrong {
+    background-color: crimson;
+    color: white;
+    text-decoration: line-through;
+  }
+
+  .guessed_correct {
+    background-color: #c7ffd6;
+    color: white;
+    -webkit-text-fill-color: black;
+  }
