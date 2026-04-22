@@ -47,6 +47,7 @@ Projeyi yerel makinenizde çalıştırmak için herhangi bir sunucu kurulumuna g
 
 ## Ekran Görüntüleri
 <img width="1626" height="963" alt="image" src="https://github.com/user-attachments/assets/08b6087a-50f6-470c-b379-65b911cb0f77" />
+<img width="1678" height="967" alt="image" src="https://github.com/user-attachments/assets/963dc12c-1541-4485-a4bf-a0afec207b49" />
 
 
 
